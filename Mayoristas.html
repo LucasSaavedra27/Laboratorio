@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes Mayoristas</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <p>USERNAME</p>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Inventario</a></li>
+            <li><a href="#">Compras</a></li>
+            <li><a href="#">Ventas</a></li>
+            <li><a href="#">Clientes Mayoristas</a></li>
+            <li><a href="#">Proveedores</a></li>
+            <li><a href="#">Reportes</a></li>
+            <li><a href="#">Gestión de usuarios</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Clientes Mayoristas</h1>
+    </header>
+    
+    <section>
+        <form action="#">
+            
+        <fieldset>
+            <legend>Registro de Mayoristas</legend>
+            <label for="tipoCliente">Tipo de Cliente</label>
+            <select id="tipoCliente">
+                <option value="1">Empresa</option>
+                <option value="2">Mayorista independiente</option>
+            </select><br><br>
+            <label for="nombre">Nombre</label>
+            <input type="text"  id="nombre" required><br><br>
+            <label for="identificación">Número de Identificación Fiscal (CUIT) </label>
+            <input type="number" id="identificación" required><br><br>
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" required><br><br>
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" required><br><br>
+            <label for="telefono">Teléfono</label>
+            <input type="text" id="telefono" required><br><br>
+            <label for="datoAdicional">Datos adicionales</label>
+            <textarea id="datoAdicional"></textarea>
+            <br><br>
+            <input type="submit" value="Guardar">
+            <input type="submit" value="Editar">
+        </fieldset>
+            
+        </form>
+    </section>
+    <br><br>
+    <hr>
+    <footer>Copyright Panadería El Maná - 2024. Todos los derechos reservados</footer>
+</body>
+</html>
