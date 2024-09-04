@@ -21,7 +21,7 @@
     <title>Panadería El Maná</title>
     <link rel="stylesheet" href="/css/estilos.css" />
   </head>
-  <script src="/js/empleados.js"></script>
+  <script src="/js/productos.js"></script>
   <body>
     <header>
       <div class="container-fluid shadow">
@@ -73,7 +73,7 @@
 
     <div class="container" id="container-emp">
       <div class="col-12">
-        <h2 class="text-center pb-3">Registro de Empleados</h2>
+        <h2 class="text-center pb-3">Registro de Productos</h2>
         <div class="busqueda d-flex">
           <form class="d-flex" role="search">
             <input
@@ -98,10 +98,11 @@
               data-bs-target="#exampleModal"
             >
               <i
-                class="fa-solid fa-user-plus"
-                title="Agregar Empleado"
+                class="fa-solid fa-square-plus"
+                title="Agregar producto"
                 style="font-size: 30px"
-              ></i>
+              >
+              </i>
             </button>
           </div>
           <a class="expPdf" href="#"
@@ -230,7 +231,7 @@
         <div class="modal-content">
           <div class="modal-header bg-primario">
             <h1 class="modal-title fs-5" id="regModalLabel">
-              Registro de Empleados
+              Registro de Productos
             </h1>
             <button
               type="button"
@@ -243,118 +244,135 @@
             <div class="container">
               <div class="row">
                 <div class="col-12">
-                  <form class="row g-3" id="form-emp">
+                  <form class="row g-3" id="form-prod">
                     <div class="col-12">
-                      <label for="dniRegister" class="form-label">DNI</label>
-                      <div class="input-group">
-                        <input
-                          type="text"
-                          name="dniRegister"
-                          class="form-control"
-                          id="dniRegister"
-                          placeholder="Ingrese DNI sin espacios ni puntos"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <label
-                      for="dniRegister"
-                      id="dniLabel"
-                      class="labelTxt"
-                    ></label>
-
-                    <div class="col-12">
-                      <label for="nameRegister" class="form-label"
-                        >Nombre</label
+                      <label for="codProdRegister" class="form-label"
+                        >Cód. de producto</label
                       >
                       <div class="input-group">
                         <input
                           type="text"
-                          name="nameRegister"
+                          name="codProdRegister"
                           class="form-control"
-                          id="nameRegister"
+                          id="codProdRegister"
+                          placeholder="Ingrese código del producto"
                           required
                         />
                       </div>
                     </div>
                     <label
-                      for="nameRegister"
+                      for="codProdRegister"
+                      id="codProdLabel"
                       class="labelTxt"
-                      id="nameLabel"
                     ></label>
 
                     <div class="col-12">
-                      <label for="lastnameRegister" class="form-label"
-                        >Apellido</label
+                      <label for="descripcionProdRegister" class="form-label"
+                        >Descripción</label
                       >
                       <div class="input-group">
                         <input
                           type="text"
-                          name="lastnameRegister"
+                          name="descripcionProdRegister"
                           class="form-control"
-                          id="lastnameRegister"
+                          id="descripcionProdRegister"
+                          placeholder="Ingrese Descripción del producto"
                           required
                         />
                       </div>
                     </div>
                     <label
-                      for="lastnameRegister"
+                      for="descripcionProdRegister"
                       class="labelTxt"
-                      id="lastNameLabel"
+                      id="descripcionProdLabel"
                     ></label>
 
                     <div class="col-12">
-                      <label for="dateRegister" class="form-label"
-                        >Fecha de Nacimiento</label
+                      <label for="precioCompraRegister" class="form-label"
+                        >Precio de compra</label
+                      >
+                      <div class="input-group">
+                        <input
+                          type="number"
+                          name="precioCompraRegister"
+                          class="form-control"
+                          id="precioCompraRegister"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <label
+                      for="precioCompraRegister"
+                      class="labelTxt"
+                      id="precioCompraLabel"
+                    ></label>
+
+                    <div class="col-12">
+                      <label for="precioVentaRegister" class="form-label"
+                        >Precio de venta</label
                       >
                       <div class="input-group">
                         <input
                           type="date"
-                          name="dateRegister"
+                          name="precioVentaRegister"
                           class="form-control"
-                          id="dateRegister"
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <div class="col-12">
-                      <label for="phoneRegister" class="form-label"
-                        >Teléfono</label
-                      >
-                      <div class="input-group">
-                        <input
-                          type="text"
-                          name="phoneRegister"
-                          class="form-control"
-                          id="phoneRegister"
+                          id="precioVentaRegister"
                           required
                         />
                       </div>
                     </div>
                     <label
-                      for="phoneRegister"
+                      for="precioVentaRegister"
                       class="labelTxt"
-                      id="phoneLabel"
+                      id="precioVentaLabel"
                     ></label>
 
                     <div class="col-12">
-                      <label for="userRegister" class="form-label"
-                        >Domicilio</label
+                      <label for="cantidadDisponibleRegister" class="form-label"
+                        >Cantidad disponible para la venta</label
                       >
                       <div class="input-group">
                         <input
-                          type="text"
-                          name="userRegister"
+                          type="number"
+                          name="cantidadDisponibleRegister"
                           class="form-control"
-                          id="userRegister"
+                          id="cantidadDisponibleRegister"
                           required
                         />
                       </div>
                     </div>
+                    <label
+                      for="cantidadDisponibleRegister"
+                      class="labelTxt"
+                      id="cantidadDisponibleLabel"
+                    ></label>
 
                     <div class="col-12">
-                      <button class="btn bg-primario w-100" type="submit">
+                      <label for="categoriaRegister" class="form-label"
+                        >Categoría</label
+                      >
+                      <select
+                        name="categoriaRegister"
+                        id="categoriaRegister"
+                        required
+                        class="form-control"
+                      >
+                        <option value="1">Panadería</option>
+                        <option value="2">Pastelería</option>
+                      </select>
+                    </div>
+
+                    <label
+                      for="categoriaRegister"
+                      class="labelTxt"
+                      id="categoriaRegisterLabel"
+                    ></label>
+
+                    <div class="col-12">
+                      <button
+                        class="btn bg-primario w-100 mt-3 mb-3"
+                        type="submit"
+                      >
                         Registrar
                       </button>
                     </div>

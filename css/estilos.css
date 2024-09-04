@@ -338,3 +338,8 @@ form #form-busqueda {
 .modal-dialog .fa-solid {
   color: rgb(255, 193, 7);
 }
+
+.labelTxt {
+  margin: 0;
+  color: #a63348;
+}
