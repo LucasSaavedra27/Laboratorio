@@ -19,7 +19,10 @@
       crossorigin="anonymous"
     ></script>
     <title>Panadería El Maná</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="/css/estilos.css" />
+    <!-- JS -->
+    <script src="/js/empleados.js"></script>
   </head>
   <body>
     <header>
@@ -74,13 +77,15 @@
       <div class="col-12">
         <h2 class="text-center pb-3">Registro de Empleados</h2>
         <div class="busqueda d-flex">
-          <form class="d-flex" role="search">
+          <form class="d-flex" role="search" id="form-search">
             <input
               class="form-control mb-3"
               type="search"
               placeholder="Ingrese DNI"
               aria-label="buscar"
-              id="form-busqueda"
+              id="form-search-dni"
+              maxlength="8"
+              pattern="\d{1,8}"
             />
             <button class="btn" type="submit">
               <i
@@ -124,94 +129,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>44333222</td>
-                <td>LUCAS</td>
-                <td>SAAVEDRA</td>
-                <td>22/03/2002</td>
-                <td>3834966666</td>
-                <td>SFVC</td>
-                <td>
-                  <button class="btn btn-modal">
-                    <i
-                      class="fa-solid fa-pen-to-square"
-                      title="Editar"
-                      id="btnEdit"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                    ></i>
-                  </button>
-                  <button class="btn btn-modal">
-                    <i
-                      class="fa-solid fa-trash-can"
-                      title="Eliminar"
-                      id="btnDel"
-                      data-bs-toggle="modal"
-                      data-bs-target="#deleteModal"
-                    ></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>33444555</td>
-                <td>JEREMÍAS</td>
-                <td>DÍAS MEDINA</td>
-                <td>22/03/2002</td>
-                <td>3834967777</td>
-                <td>VALLE VIEJO</td>
-                <td>
-                  <button class="btn btn-modal">
-                    <i
-                      class="fa-solid fa-pen-to-square"
-                      title="Editar"
-                      id="btnEdit"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                    ></i>
-                  </button>
-                  <button class="btn btn-modal">
-                    <i
-                      class="fa-solid fa-trash-can"
-                      title="Eliminar"
-                      id="btnDel"
-                      data-bs-toggle="modal"
-                      data-bs-target="#deleteModal"
-                    ></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>55666777</td>
-                <td>CAMILA</td>
-                <td>IRALA</td>
-                <td>22/03/2002</td>
-                <td>3834968888</td>
-                <td>SFVC</td>
-                <td>
-                  <button class="btn btn-modal">
-                    <i
-                      class="fa-solid fa-pen-to-square"
-                      title="Editar"
-                      id="btnEdit"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                    ></i>
-                  </button>
-
-                  <button class="btn btn-modal">
-                    <i
-                      class="fa-solid fa-trash-can"
-                      title="Eliminar"
-                      id="btnDel"
-                      data-bs-toggle="modal"
-                      data-bs-target="#deleteModal"
-                    ></i>
-                  </button>
-                </td>
-              </tr>
+              <!-- Tabla Actualizada con JS -->
             </tbody>
           </table>
         </div>
