@@ -100,9 +100,9 @@
                         data-bs-toggle="modal"
                         data-bs-target="#exampleModal"
                         ><i
-                            class="fa-solid fa-user-plus"
-                            title="Agregar Empleado"
-                            style="font-size: 30px"
+                            class="fa-solid fa-square-plus"
+                            title="Agregar Pedido"
+                            id="btn_formulario"
                         ></i>
                     </button>
                 </div>
@@ -120,7 +120,8 @@
                                 <th scope="col">Fecha Pedido</th>
                                 <th scope="col">Proveedor</th>
                                 <th scope="col">Producto/s</th>
-                                <th scope="col">Total</th>
+                                <th scope="col">Medición</th>
+                                <th scope="col">Cantidad</th>
                                 <th scope="col">Estado Pago</th>
                                 <th scope="col">Fecha Entrega</th>
                                 <th scope="col">Estado Pedido</th>
@@ -130,12 +131,13 @@
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td>22/08/2024</td>
+                                <td>22-08-2024</td>
                                 <td>MOLINOS RIO DE LA PLATA</td>
-                                <td>HARINA, ACEITE</td>
-                                <td>$110.300</td>
+                                <td>HARINA</td>
+                                <td>KILO</td>
+                                <td>10</td>
                                 <td>PAGADO</td>
-                                <td>10/09/2024</td>
+                                <td>10-09-2024</td>
                                 <td>PENDIENTE</td>
                                 <td>
                                     <button class="btn btn-modal">
@@ -160,12 +162,13 @@
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
-                                <td>01/09/2024</td>
+                                <td>01-09-2024</td>
                                 <td>LESAFFRE ARGENTINA</td>
                                 <td>LEVADURA</td>
-                                <td>$50.000</td>
+                                <td>KILO</td>
+                                <td>5</td>
                                 <td>PAGADO</td>
-                                <td>04/09/2024</td>
+                                <td>04-09-2024</td>
                                 <td>RECIBIDO</td>
                                 <td>
                                     <button class="btn btn-modal">
@@ -190,12 +193,44 @@
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
-                                <td>03/09/2024</td>
+                                <td>03-09-2024</td>
                                 <td>CARGILLAR ARGENTINA</td>
-                                <td>CACAO, ALMIDON, GLUCOSA</td>
-                                <td>$205.000</td>
+                                <td>CACAO</td>
+                                <td>KILO</td>
+                                <td>9</td>
                                 <td>PENDIENTE</td>
-                                <td>15/09/2024</td>
+                                <td>15-09-2024</td>
+                                <td>PENDIENTE</td>
+                                <td>
+                                    <button class="btn btn-modal">
+                                        <i
+                                            class="fa-solid fa-pen-to-square"
+                                            title="Editar"
+                                            id="btnEdit"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal"
+                                        ></i>
+                                    </button>
+                                    <button class="btn btn-modal">
+                                        <i
+                                            class="fa-solid fa-trash-can"
+                                            title="Eliminar"
+                                            id="btnDel"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal"
+                                        ></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>04-09-2024</td>
+                                <td>CARGILLAR ARGENTINA</td>
+                                <td>ACEITE</td>
+                                <td>LITRO</td>
+                                <td>10</td>
+                                <td>PAGADO</td>
+                                <td>14-09-2024</td>
                                 <td>PENDIENTE</td>
                                 <td>
                                     <button class="btn btn-modal">
@@ -273,25 +308,40 @@
                                     <div class="col-12">
                                         <label for="productoRegister" class="form-label">Producto/s</label>
                                         <div class="input-group">
-                                            <input
-                                                type="text"
-                                                name="productoRegister"
-                                                class="form-control"
-                                                id="productoRegister"
-                                                required
-                                            />
+                                            <select name="productoRegister" class="form-control" id="productoRegister">
+                                                <option>ACEITE</option>
+                                                <option>ALMIDÓN DE MAÍZ</option>
+                                                <option>AZÚCAR</option>
+                                                <option>CACAO</option>
+                                                <option>GLUCOSA</option>
+                                                <option>HARINA</option>
+                                                <option>HUEVOS</option>
+                                                <option>LECHE</option>
+                                                <option>LEVADURA</option>
+                                            </select>
                                         </div>
                                     </div>
 
                                     <div class="col-12">
-                                        <label for="totalRegister" class="form-label">Total</label>
+                                        <label for="tipo_medicionRegister" class="form-label">Tipo de Medición</label>
+                                        <div class="input-group">
+                                            <select name="tipo_medicionRegister" class="form-control" id="tipo_medicionRegister">
+                                                <option>KILOGRAMO</option>
+                                                <option>UNIDAD</option>
+                                                <option>GRAMO</option>
+                                                <option>LITRO</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="cantidadRegister" class="form-label">Cantidad</label>
                                         <div class="input-group">
                                             <input
-                                                type="text"
-                                                name="totalRegister"
+                                                type="number"
+                                                name="cantidadRegister"
                                                 class="form-control"
-                                                id="totalRegister"
-                                                readonly
+                                                id="cantidadRegister"
                                             />
                                         </div>
                                     </div>
@@ -320,7 +370,7 @@
                                     </div>
 
                                     <div class="col-12">
-                                        <label for="estadoPagoRegister" class="form-label">Estado de Pago</label>
+                                        <label for="estadoPagoRegister" class="form-label">Estado de Pedido</label>
                                         <div class="input-group">
                                             <select name="estadoPagoRegister" class="form-control" id="estadoPagoRegister">
                                                 <option>PENDIENTE</option>

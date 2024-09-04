@@ -297,6 +297,11 @@ form #form-busqueda {
   width: 250px;
 }
 
+.btn #btn_formulario {
+  font-size: 30px; 
+  color: #da2244
+}
+
 .expPdf {
   text-decoration: none;
   color: #da2244;
