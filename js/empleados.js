@@ -27,34 +27,34 @@ form_emp.addEventListener('submit', function(emp){
     };
 
     empleados.push(empleado);
-
+    // Se actualiza la tabla
     actualizarTabla();
-
+    // se resetea el formulario
     form_emp.reset();
-
-    console.log(empleados);
 });
 // Busqueda por DNI
 const form_search_dni = document.getElementById('form-search');
 
 form_search_dni.addEventListener('submit', function(event){
     event.preventDefault();
-
+    // obtiene el valor de dni y le quita los espacios
     const dni = document.getElementById('form-search-dni').value.trim();
-
+    // si "dni" es vacio actualiza la tabla y deja los registros vacios
     if (dni == '') {
-        actualizarTabla();
+        // Se actualiza la tabla
+        mostrarEmpleados([]);
         return;
     }
+    // verifica datos de DNI
     if (!(/^\d{1,8}$/.test(dni))) {
         console.log("DNI no valido:", dni);
+        return;
     }
-
+    // filtra a los DNI que comienzan por "dni" y los almacena en "empleadosFiltrados"
     const empleadosFiltrados = empleados.filter(empleado => empleado.dni.startsWith(dni));
     mostrarEmpleados(empleadosFiltrados);
-
+    // resetea el formulario dni despues de cada busqueda
     form_search_dni.reset();
-
 });
 // manda el indice para editar o eliminar el registro
 document.querySelector('tbody').addEventListener('click', function(event) {
@@ -73,23 +73,23 @@ document.querySelector('tbody').addEventListener('click', function(event) {
 // Evento de boton eliminar en modal
 document.getElementById('btn-del').addEventListener('click', function() {
     if (indexToDelete !== null) {
-        eliminarEmpleado(indexToDelete);
+
+        empleados.splice(indexToDelete, 1);
+        // Se actualiza la tabla
+        actualizarTabla();
+
+        // Oculta el modal de "advertencia al eliminar"
+        const modal = bootstrap.Modal.getInstance(document.getElementById('deleteModal'));
+        modal.hide();
+
+        // Resetea el indice de eliminacion
         indexToDelete = null;
     }
 });
-// Funcion para eliminar empleados
-function eliminarEmpleado(index) {
-    empleados.splice(index, 1);
-    actualizarTabla();
-    // ocultamiento del modal de "advertencia al eliminar"
-    const modal = bootstrap.Modal.getInstance(document.getElementById('deleteModal'));
-    modal.hide();
-}
+
 // Funcion para eliminar empleados
 function editarEmpleado(index) {
-    console.log(index);
     const empleado = empleados[index];
-    console.log(empleado)
     document.getElementById('dniRegister').value = empleado.dni;
     document.getElementById('nameRegister').value = empleado.nombre;
     document.getElementById('lastnameRegister').value = empleado.apellido;
@@ -98,6 +98,7 @@ function editarEmpleado(index) {
     document.getElementById('userRegister').value = empleado.domicilio;
 
     empleados.splice(index, 1);
+    // Se actualiza la tabla
     actualizarTabla();
 }
 // Funcion para actualizar tabla principal de empleados
