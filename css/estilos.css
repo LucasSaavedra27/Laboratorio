@@ -286,7 +286,7 @@ body {
 }
 
 table .btn #btnEdit:hover {
-  color: rgb(23, 202, 23);
+  color: #0051ff;
 }
 
 table .btn #btnDel:hover {
@@ -305,4 +305,36 @@ form #form-busqueda {
 .busqueda {
   justify-content: space-between;
   align-items: center;
+}
+
+.btn-modal .fa-solid {
+  color: #a63348;
+}
+
+.btn-modal .fa-solid:hover {
+  color: #ce5050;
+}
+
+.btn-modal #btnEdit {
+  color: #242331;
+}
+
+.modal-footer #btn-del {
+  color: #f2f2f2;
+}
+
+.modal-footer #btn-del:hover {
+  background-color: #732036;
+}
+
+.modal-footer #btn-cancel {
+  color: #f2f2f2;
+}
+
+.modal-footer #btn-cancel:hover {
+  background-color: #a07d85;
+}
+
+.modal-dialog .fa-solid {
+  color: rgb(255, 193, 7);
 }

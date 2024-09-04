@@ -60,6 +60,9 @@
           <a href="#"
             ><i class="fa-solid fa-people-carry-box"></i>Proveedores</a
           >
+          <a href="empleados.html"
+            ><i class="fa-solid fa-users"></i>Empleados</a
+          >
         </nav>
         <label for="btn-menu" class="equis"
           ><i class="fa-solid fa-xmark"></i
@@ -68,220 +71,332 @@
     </div>
 
     <div class="container" id="container-emp">
-      <div class="row">
-        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 my-4">
-          <h2>Registro de Empleados</h2>
-          <form class="row g-3" id="form-emp">
-            <div class="col-12">
-              <label for="dniRegister" class="form-label">DNI</label>
-              <div class="input-group">
-                <input
-                  type="text"
-                  name="dniRegister"
-                  class="form-control"
-                  id="dniRegister"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="col-12">
-              <label for="nameRegister" class="form-label">Nombre</label>
-              <div class="input-group">
-                <input
-                  type="text"
-                  name="nameRegister"
-                  class="form-control"
-                  id="nameRegister"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="col-12">
-              <label for="lastnameRegister" class="form-label">Apellido</label>
-              <div class="input-group">
-                <input
-                  type="text"
-                  name="lastnameRegister"
-                  class="form-control"
-                  id="lastnameRegister"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="col-12">
-              <label for="dateRegister" class="form-label"
-                >Fecha de Nacimiento</label
-              >
-              <div class="input-group">
-                <input
-                  type="date"
-                  name="dateRegister"
-                  class="form-control"
-                  id="dateRegister"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="col-12">
-              <label for="phoneRegister" class="form-label">Teléfono</label>
-              <div class="input-group">
-                <input
-                  type="text"
-                  name="phoneRegister"
-                  class="form-control"
-                  id="phoneRegister"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="col-12">
-              <label for="userRegister" class="form-label">Domicilio</label>
-              <div class="input-group">
-                <input
-                  type="text"
-                  name="userRegister"
-                  class="form-control"
-                  id="userRegister"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="col-12">
-              <button class="btn bg-primario w-100" type="submit">
-                Registrar
-              </button>
-            </div>
-            <div class="col-12">
-              <button class="btn bg-secundario w-100" type="reset">
-                Limpiar
-              </button>
-            </div>
+      <div class="col-12">
+        <h2 class="text-center pb-3">Registro de Empleados</h2>
+        <div class="busqueda d-flex">
+          <form class="d-flex" role="search">
+            <input
+              class="form-control mb-3"
+              type="search"
+              placeholder="Ingrese DNI"
+              aria-label="buscar"
+              id="form-busqueda"
+            />
+            <button class="btn" type="submit">
+              <i
+                class="fa-solid fa-magnifying-glass"
+                style="font-size: 16px"
+              ></i>
+            </button>
           </form>
+          <div class="btn-modal">
+            <button
+              type="button"
+              class="btn"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              <i
+                class="fa-solid fa-user-plus"
+                title="Agregar Empleado"
+                style="font-size: 30px"
+              ></i>
+            </button>
+          </div>
+          <a class="expPdf" href="#"
+            ><i class="fa-solid fa-file-pdf px-2" style="font-size: 25px"></i
+            >Exportar PDF</a
+          >
         </div>
 
-        <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8 my-4">
-          <h2>Tabla de Empleados</h2>
-          <!-- <div class="container" id="container-busqueda"> -->
-          <div class="busqueda d-flex">
-            <form class="d-flex" role="search">
-              <input
-                class="form-control mb-3"
-                type="search"
-                placeholder="Ingrese DNI"
-                aria-label="buscar"
-                id="form-busqueda"
-              />
-              <button class="btn" type="submit">
-                <i
-                  class="fa-solid fa-magnifying-glass"
-                  style="font-size: 16px"
-                ></i>
-              </button>
-            </form>
-            <a class="expPdf" href="#"
-              ><i class="fa-solid fa-file-pdf px-2" style="font-size: 25px"></i
-              >Exportar PDF</a
-            >
-          </div>
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="bg-table">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">DNI</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Fecha de Nac</th>
+                <th scope="col">Teléfono</th>
+                <th scope="col">Domicilio</th>
+                <th scope="col">Opciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>44333222</td>
+                <td>LUCAS</td>
+                <td>SAAVEDRA</td>
+                <td>22/03/2002</td>
+                <td>3834966666</td>
+                <td>SFVC</td>
+                <td>
+                  <button class="btn btn-modal">
+                    <i
+                      class="fa-solid fa-pen-to-square"
+                      title="Editar"
+                      id="btnEdit"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                    ></i>
+                  </button>
+                  <button class="btn btn-modal">
+                    <i
+                      class="fa-solid fa-trash-can"
+                      title="Eliminar"
+                      id="btnDel"
+                      data-bs-toggle="modal"
+                      data-bs-target="#deleteModal"
+                    ></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>33444555</td>
+                <td>JEREMÍAS</td>
+                <td>DÍAS MEDINA</td>
+                <td>22/03/2002</td>
+                <td>3834967777</td>
+                <td>VALLE VIEJO</td>
+                <td>
+                  <button class="btn btn-modal">
+                    <i
+                      class="fa-solid fa-pen-to-square"
+                      title="Editar"
+                      id="btnEdit"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                    ></i>
+                  </button>
+                  <button class="btn btn-modal">
+                    <i
+                      class="fa-solid fa-trash-can"
+                      title="Eliminar"
+                      id="btnDel"
+                      data-bs-toggle="modal"
+                      data-bs-target="#deleteModal"
+                    ></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>55666777</td>
+                <td>CAMILA</td>
+                <td>IRALA</td>
+                <td>22/03/2002</td>
+                <td>3834968888</td>
+                <td>SFVC</td>
+                <td>
+                  <button class="btn btn-modal">
+                    <i
+                      class="fa-solid fa-pen-to-square"
+                      title="Editar"
+                      id="btnEdit"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                    ></i>
+                  </button>
 
-          <div class="table-responsive">
-            <table class="table">
-              <thead class="bg-table">
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">DNI</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Apellido</th>
-                  <th scope="col">Fecha de Nac</th>
-                  <th scope="col">Teléfono</th>
-                  <th scope="col">Domicilio</th>
-                  <th scope="col">Opciones</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>44333222</td>
-                  <td>LUCAS</td>
-                  <td>SAAVEDRA</td>
-                  <td>22/03/2002</td>
-                  <td>3834966666</td>
-                  <td>SFVC</td>
-                  <td>
-                    <button class="btn">
-                      <i
-                        class="fa-solid fa-pen-to-square"
-                        title="Editar"
-                        id="btnEdit"
-                      ></i>
-                    </button>
-                    <button class="btn">
-                      <i
-                        class="fa-solid fa-trash-can"
-                        title="Eliminar"
-                        id="btnDel"
-                      ></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>33444555</td>
-                  <td>JEREMÍAS</td>
-                  <td>DÍAS MEDINA</td>
-                  <td>22/03/2002</td>
-                  <td>3834967777</td>
-                  <td>VALLE VIEJO</td>
-                  <td>
-                    <button class="btn">
-                      <i
-                        class="fa-solid fa-pen-to-square"
-                        title="Editar"
-                        id="btnEdit"
-                      ></i>
-                    </button>
-                    <button class="btn">
-                      <i
-                        class="fa-solid fa-trash-can"
-                        title="Eliminar"
-                        id="btnDel"
-                      ></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>55666777</td>
-                  <td>CAMILA</td>
-                  <td>IRALA</td>
-                  <td>22/03/2002</td>
-                  <td>3834968888</td>
-                  <td>SFVC</td>
-                  <td>
-                    <button class="btn">
-                      <i
-                        class="fa-solid fa-pen-to-square"
-                        title="Editar"
-                        id="btnEdit"
-                      ></i>
-                    </button>
-                    <button class="btn">
-                      <i
-                        class="fa-solid fa-trash-can"
-                        title="Eliminar"
-                        id="btnDel"
-                      ></i>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                  <button class="btn btn-modal">
+                    <i
+                      class="fa-solid fa-trash-can"
+                      title="Eliminar"
+                      id="btnDel"
+                      data-bs-toggle="modal"
+                      data-bs-target="#deleteModal"
+                    ></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="regModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-primario">
+            <h1 class="modal-title fs-5" id="regModalLabel">
+              Registro de Empleados
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <form class="row g-3" id="form-emp">
+                    <div class="col-12">
+                      <label for="dniRegister" class="form-label">DNI</label>
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          name="dniRegister"
+                          class="form-control"
+                          id="dniRegister"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="nameRegister" class="form-label"
+                        >Nombre</label
+                      >
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          name="nameRegister"
+                          class="form-control"
+                          id="nameRegister"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="lastnameRegister" class="form-label"
+                        >Apellido</label
+                      >
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          name="lastnameRegister"
+                          class="form-control"
+                          id="lastnameRegister"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="dateRegister" class="form-label"
+                        >Fecha de Nacimiento</label
+                      >
+                      <div class="input-group">
+                        <input
+                          type="date"
+                          name="dateRegister"
+                          class="form-control"
+                          id="dateRegister"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="phoneRegister" class="form-label"
+                        >Teléfono</label
+                      >
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          name="phoneRegister"
+                          class="form-control"
+                          id="phoneRegister"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="userRegister" class="form-label"
+                        >Domicilio</label
+                      >
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          name="userRegister"
+                          class="form-control"
+                          id="userRegister"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <button class="btn bg-primario w-100" type="submit">
+                        Registrar
+                      </button>
+                    </div>
+                    <div class="col-12">
+                      <button class="btn bg-secundario w-100" type="reset">
+                        Limpiar
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                Save changes
+              </button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="deleteModal"
+      tabindex="-1"
+      aria-labelledby="eliminarModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="eliminarModal">
+              <i class="fa-solid fa-circle-exclamation"></i>
+              ATENCIÓN
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">¿Estás seguro de eliminar el registro?</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn bg-secundario"
+              data-bs-dismiss="modal"
+              id="btn-cancel"
+            >
+              Cerrar
+            </button>
+            <button type="button" class="btn bg-primario" id="btn-del">
+              Eliminar
+            </button>
           </div>
         </div>
       </div>
@@ -291,7 +406,7 @@
       <footer class="footer py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
           <li class="nav-item">
-            <a href="#" class="nav-link px-2">Inicio</a>
+            <a href="index.html" class="nav-link px-2">Inicio</a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link px-2">Estadísticas</a>
@@ -310,6 +425,9 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link px-2">Proveedores</a>
+          </li>
+          <li class="nav-item">
+            <a href="empleados.html" class="nav-link px-2">Empleados</a>
           </li>
         </ul>
         <p class="text-center">© 2024 Panadería El Maná</p>
