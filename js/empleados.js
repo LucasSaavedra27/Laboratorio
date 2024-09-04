@@ -4,38 +4,37 @@ let empleados = [];
 
 const form_emp = document.getElementById('form-emp');
 
-    form_emp.addEventListener('submit', function(emp){
-        const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
-        modal.hide();
+form_emp.addEventListener('submit', function(emp){
+    const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
+    modal.hide();
 
-        emp.preventDefault();
+    emp.preventDefault();
 
-        const dni = document.getElementById('dniRegister').value;
-        const nombre = document.getElementById('nameRegister').value;
-        const apellido = document.getElementById('lastnameRegister').value;
-        const fechaNacimiento = document.getElementById('dateRegister').value;
-        const telefono = document.getElementById('phoneRegister').value;
-        const domicilio = document.getElementById('userRegister').value;
+    const dni = document.getElementById('dniRegister').value;
+    const nombre = document.getElementById('nameRegister').value;
+    const apellido = document.getElementById('lastnameRegister').value;
+    const fechaNacimiento = document.getElementById('dateRegister').value;
+    const telefono = document.getElementById('phoneRegister').value;
+    const domicilio = document.getElementById('userRegister').value;
 
-        const empleado = {
-            dni: dni,
-            nombre: nombre,
-            apellido: apellido,
-            fechaNacimiento: fechaNacimiento,
-            telefono: telefono,
-            domicilio: domicilio
-        };
+    const empleado = {
+        dni: dni,
+        nombre: nombre,
+        apellido: apellido,
+        fechaNacimiento: fechaNacimiento,
+        telefono: telefono,
+        domicilio: domicilio
+    };
 
-        empleados.push(empleado);
+    empleados.push(empleado);
 
-        actualizarTabla();
+    actualizarTabla();
 
-        form_emp.reset();
+    form_emp.reset();
 
-        console.log(empleados);
-    });
+    console.log(empleados);
+});
 // Busqueda por DNI
-
 const form_search_dni = document.getElementById('form-search');
 
 form_search_dni.addEventListener('submit', function(event){
@@ -57,13 +56,55 @@ form_search_dni.addEventListener('submit', function(event){
     form_search_dni.reset();
 
 });
+// manda el indice para editar o eliminar el registro
+document.querySelector('tbody').addEventListener('click', function(event) {
+    if (event.target.closest('button')) {
+        const button = event.target.closest('button');
+        const action = button.getAttribute('data-action');
+        const index = button.getAttribute('data-index');
 
+        if (action === 'delete') {
+            indexToDelete = index;
+        } else if (action === 'edit') {
+            editarEmpleado(index);
+        }
+    }
+});
+// Evento de boton eliminar en modal
+document.getElementById('btn-del').addEventListener('click', function() {
+    if (indexToDelete !== null) {
+        eliminarEmpleado(indexToDelete);
+        indexToDelete = null;
+    }
+});
+// Funcion para eliminar empleados
+function eliminarEmpleado(index) {
+    empleados.splice(index, 1);
+    actualizarTabla();
+    // ocultamiento del modal de "advertencia al eliminar"
+    const modal = bootstrap.Modal.getInstance(document.getElementById('deleteModal'));
+    modal.hide();
+}
+// Funcion para eliminar empleados
+function editarEmpleado(index) {
+    console.log(index);
+    const empleado = empleados[index];
+    console.log(empleado)
+    document.getElementById('dniRegister').value = empleado.dni;
+    document.getElementById('nameRegister').value = empleado.nombre;
+    document.getElementById('lastnameRegister').value = empleado.apellido;
+    document.getElementById('dateRegister').value = empleado.fechaNacimiento;
+    document.getElementById('phoneRegister').value = empleado.telefono;
+    document.getElementById('userRegister').value = empleado.domicilio;
+
+    empleados.splice(index, 1);
+    actualizarTabla();
+}
 // Funcion para actualizar tabla principal de empleados
 function actualizarTabla() {
     mostrarEmpleados(empleados);
 }
-
-// Función para mostrar empleados deseados
+// Funcion para mostrar empleados deseados en tabla principal
 function mostrarEmpleados(listaEmpleados) {
 
     const tbody = document.querySelector('tbody');
@@ -93,28 +134,7 @@ function mostrarEmpleados(listaEmpleados) {
     });
 }
 
-// Funcion para eliminar empleados
-function eliminarEmpleado(index) {
-    empleados.splice(index, 1);
-    actualizarTabla();
-}
-// Funcion para eliminar empleados
-function editarEmpleado(index) {
-    console.log(index);
-    const empleado = empleados[index];
-    console.log(empleado)
-    document.getElementById('dniRegister').value = empleado.dni;
-    document.getElementById('nameRegister').value = empleado.nombre;
-    document.getElementById('lastnameRegister').value = empleado.apellido;
-    document.getElementById('dateRegister').value = empleado.fechaNacimiento;
-    document.getElementById('phoneRegister').value = empleado.telefono;
-    document.getElementById('userRegister').value = empleado.domicilio;
-
-    empleados.splice(index, 1);
-    actualizarTabla();
-}
-
-const btn_editar = document.getElementById('btn-editar');
+/* const btn_editar = document.getElementById('btn-editar');
 
     btn_editar.addEventListener('submit', function(emp){
         const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
@@ -145,7 +165,7 @@ const btn_editar = document.getElementById('btn-editar');
         form.reset();
 
         console.log(empleados);
-    });
+    }); */
 
 
 // Funcion para actualizar tabla principal de empleados (OTRA FORMA)
