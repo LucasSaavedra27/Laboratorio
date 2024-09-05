@@ -32,92 +32,41 @@
               alt="Logo Panadería El Maná"
               width="140px"
               height="80px"
-          /></a>
+            />
+          </a>
           <label for="btn-menu"><i class="fa-solid fa-bars"></i></label>
         </div>
         <div class="usuario">
-          <a href="/html/iniciar-sesion.html">
+          <a href="iniciar-sesion.html">
             <i class="fa-regular fa-user"></i>
             <p>User</p>
           </a>
         </div>
       </div>
     </header>
-
+    <!-- MENU DESPLEGABLE -->
     <input type="checkbox" id="btn-menu" />
     <div class="container-menu shadow">
       <div class="cont-menu">
         <nav>
-          <a href="/html/estadisticas.html"
-            ><i class="fa-solid fa-chart-simple"></i>Estadísticas</a
-          >
-          <a href="#"><i class="fa-solid fa-bread-slice"></i>Productos</a>
-          <a href="#"
-            ><i class="fa-solid fa-person-circle-check"></i>Clientes</a
-          >
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i>Compras</a>
-          <a href="#"><i class="fa-solid fa-cash-register"></i>Ventas</a>
-          <a href="#"
-            ><i class="fa-solid fa-people-carry-box"></i>Proveedores</a
-          >
-          <a href="/html/empleados.html"
-            ><i class="fa-solid fa-users"></i>Empleados</a
-          >
+          <a href="/html/menu/estadisticas.html"><i class="fa-solid fa-chart-simple"></i> Estadísticas</a>
+          <a href="/html/menu/gestion_productos.html"><i class="fa-solid fa-bread-slice"></i> Productos</a>
+          <a href="/html/menu/gestion_clientes.html"><i class="fa-solid fa-person-circle-check"></i> Clientes</a>
+          <a href="/html/menu/gestion_compras.html"><i class="fa-solid fa-cart-shopping"></i> Compras</a>
+          <a href="/html/menu/gestion_ventas.html"><i class="fa-solid fa-cash-register"></i> Ventas</a>
+          <a href="/html/menu/gestion_proveedores.html"><i class="fa-solid fa-people-carry-box"></i> Proveedores</a>
         </nav>
-        <label for="btn-menu" class="equis"
-          ><i class="fa-solid fa-xmark"></i
-        ></label>
+        <label for="btn-menu" class="equis"><i class="fa-solid fa-xmark"></i></label>
       </div>
     </div>
-
+    <!-- CONTENIDO -->
     <section class="stats">
       <div class="pagetitle">
-        <h1>Estadísticas diarias</h1>
+        <h1>Gestion Ventas</h1>
       </div>
-      <div class="container-card">
-        <div class="row">
-          <div class="col-7">
-            <div class="row">
-              <div class="col-4" id="col4">
-                <h1>Ventas diarias</h1>
-                <div class="iconcontainer">
-                  <div class="icon">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                  </div>
-                  <div class="monto">
-                    <p>$10.000</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4" id="col4">
-                <h1>Ventas semanales</h1>
-                <div class="iconcontainer">
-                  <div class="icon">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                  </div>
-                  <div class="monto">
-                    <p>$10.000</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4" id="col4">
-                <h1>Ventas mensuales</h1>
-                <div class="iconcontainer">
-                  <div class="icon">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                  </div>
-                  <div class="monto">
-                    <p>$10.000</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4">Column</div>
-        </div>
-      </div>
+      
     </section>
-
+    <!-- FOOTER -->
     <div class="container-footer">
       <footer class="footer py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
@@ -125,7 +74,7 @@
             <a href="/html/index.html" class="nav-link px-2">Inicio</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link px-2">Estadísticas</a>
+            <a href="/html/estadisticas.html" class="nav-link px-2">Estadísticas</a>
           </li>
           <li class="nav-item">
             <a href="/html/productos.html" class="nav-link px-2">Productos</a>
@@ -137,7 +86,7 @@
             <a href="/html/gestion_compras.html" class="nav-link px-2">Compras</a>
           </li>
           <li class="nav-item">
-            <a href="/html/gestion_ventas.html" class="nav-link px-2">Ventas</a>
+            <a href="#" class="nav-link px-2">Ventas</a>
           </li>
           <li class="nav-item">
             <a href="/html/gestion_proveedores.html" class="nav-link px-2">Proveedores</a>

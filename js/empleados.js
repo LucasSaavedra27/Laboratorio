@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
+    /* 
+
+    --- JS DE LUCAS ---
+    
+    */
 
     // deshabilitar fechas posteriores a la actual
     function deshabilitarFechasPasadas() {
@@ -53,6 +58,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     });
+
+/* 
+
+--- JS DE CHINO ---
+
+*/
+
+
 
 });
 
