@@ -47,17 +47,9 @@
     </div>
   </div>
 
-  <div id="carouselExampleCaptions" class="carousel slide">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-        aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-        aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-        aria-label="Slide 3"></button>
-    </div>
+  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active">
+      <div class="carousel-item active" data-bs-interval="4000">
         <img src="/img/frente1.png" class="d-block w-100" alt="Panes" />
         <div class="carousel-caption d-none d-md-block">
           <h5>Panadería El Maná</h5>
@@ -67,7 +59,7 @@
           </p>
         </div>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" data-bs-interval="4000">
         <img src="/img/frente2.png" class="d-block w-100" alt="Panes" />
         <div class="carousel-caption d-none d-md-block">
           <h5>Panadería El Maná</h5>
@@ -77,7 +69,7 @@
           </p>
         </div>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" data-bs-interval="4000">
         <img src="/img/frente3.png" class="d-block w-100" alt="Panes" />
         <div class="carousel-caption d-none d-md-block">
           <h5>Panadería El Maná</h5>
@@ -88,139 +80,192 @@
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
   </div>
 
-  <div class="container-xxl py-6">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay="0.1s" style="
-              visibility: visible;
-              animation-delay: 0.1s;
-              animation-name: fadeIn;
-            ">
-          <div class="fact-item bg-light rounded text-center h-100 p-5">
-            <i class="fa fa-certificate fa-4x mb-4"></i>
-            <p class="mb-2">Años de Experiencia</p>
-            <h1 class="display-5 mb-0" data-toggle="counter-up">22</h1>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay="0.3s" style="
-              visibility: visible;
-              animation-delay: 0.3s;
-              animation-name: fadeIn;
-            ">
-          <div class="fact-item bg-light rounded text-center h-100 p-5">
-            <i class="fa fa-users fa-4x mb-4"></i>
-            <p class="mb-2">Personal a cargo</p>
-            <h1 class="display-5 mb-0" data-toggle="counter-up">14</h1>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay="0.5s" style="
-              visibility: visible;
-              animation-delay: 0.5s;
-              animation-name: fadeIn;
-            ">
-          <div class="fact-item bg-light rounded text-center h-100 p-5">
-            <i class="fa fa-bread-slice fa-4x mb-4"></i>
-            <p class="mb-2">Cantidad de recetas</p>
-            <h1 class="display-5 mb-0" data-toggle="counter-up">127</h1>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay="0.7s" style="
-              visibility: visible;
-              animation-delay: 0.7s;
-              animation-name: fadeIn;
-            ">
-          <div class="fact-item bg-light rounded text-center h-100 p-5">
-            <i class="fa fa-cart-plus fa-4x mb-4"></i>
-            <p class="mb-2">Pedidos semanales</p>
-            <h1 class="display-5 mb-0" data-toggle="counter-up">+10.000</h1>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="container">
-    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="
-          max-width: 500px;
-          visibility: visible;
-          animation-delay: 0.1s;
-          animation-name: fadeInUp;
-        ">
-      <h1 class="display-6 mb-4">Nuestro equipo y sus habilidades</h1>
+  <div class="contenedorParrafo"><a href="#seccionCardProducto">
+      <h1 class="parrafoRecom">¡Productos recomendados!</h1>
+    </a></div>
+
+  <section id="seccionCardProducto">
+
+    <div class="container text-center" id="containerCardProdRecom">
+      <div class="row d-flex justify-content-center align-items-center text-center" id="rowCard">
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+          <div class="card bg-light" id="card" data-tilt data-tilt-glare data-tilt-max-glare="0.5">
+            <img src="/img/1.png" class="card-img-top" alt="bakery">
+            <div class="card-body">
+              <h5 class="card-title">BEKERY</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+          <div class="card bg-light" id="card" data-tilt data-tilt-glare data-tilt-max-glare="0.5">
+            <img src="/img/2.png" class="card-img-top" alt="bakery">
+            <div class="card-body">
+              <h5 class="card-title">TORTAS</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+          <div class="card bg-light" id="card" data-tilt data-tilt-glare data-tilt-max-glare="0.5" s>
+            <img src="/img/3.png" class="card-img-top imgPast" alt="bakery">
+            <div class="card-body">
+              <h5 class="card-title">TARTA DE MANZANA</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+          <div class="card bg-light" id="card" data-tilt data-tilt-glare data-tilt-max-glare="0.5">
+            <img src="/img/4.png" class="card-img-top" alt="bakery">
+            <div class="card-body">
+              <h5 class="card-title">PASTAFROLA</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+          <div class="card bg-light" id="card" data-tilt data-tilt-glare data-tilt-max-glare="0.5">
+            <img src="/img/5.png" class="card-img-top" alt="bakery">
+            <div class="card-body">
+              <h5 class="card-title">PAN NEGRO</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+          <div class="card bg-light" id="card" data-tilt data-tilt-glare data-tilt-max-glare="0.5">
+            <img src="/img/6.png" class="card-img-top" alt="bakery">
+            <div class="card-body">
+              <h5 class="card-title">CAÑONCITOS</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+          <div class="card bg-light" id="card" data-tilt data-tilt-glare data-tilt-max-glare="0.5">
+            <img src="/img/7.png" class="card-img-top" alt="bakery">
+            <div class="card-body">
+              <h5 class="card-title">FACTURAS</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+          <div class="card bg-light" id="card" data-tilt data-tilt-glare data-tilt-max-glare="0.5">
+            <img src="/img/8.png" class="card-img-top" alt="bakery">
+            <div class="card-body">
+              <h5 class="card-title">DONNUTS</h5>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="row g-4" id="rowTeam">
-      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="
-            visibility: visible;
-            animation-delay: 0.1s;
-            animation-name: fadeInUp;
-          ">
-        <div class="team-item text-center rounded overflow-hidden">
-          <img class="img-fluid" src="/img/team-1.jpg" alt="" />
-          <div class="team-text">
-            <div class="team-title">
-              <h5>Full Name</h5>
-              <span>Designation</span>
+  </section>
+
+  <div class="contenedorParrafo2"><a href="#seccionCardSobreNos">
+      <h1 class="parrafoRecom">¡Conoce más sobre nosotros!</h1>
+    </a></div>
+
+  <section id="seccionCardSobreNos">
+    <div class="container-xxl">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6 wow fadeIn">
+            <div class="fact-item bg-light rounded text-center h-100 p-5 " data-tilt data-tilt-reverse>
+              <i class="fa fa-certificate fa-4x mb-4"></i>
+              <p class="mb-2">Años de Experiencia</p>
+              <h1 class="display-5 mb-0" data-toggle="counter-up">22</h1>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s" style="
-            visibility: visible;
-            animation-delay: 0.3s;
-            animation-name: fadeInUp;
-          ">
-        <div class="team-item text-center rounded overflow-hidden">
-          <img class="img-fluid" src="/img/team-1.jpg" alt="" />
-          <div class="team-text">
-            <div class="team-title">
-              <h5>Full Name</h5>
-              <span>Designation</span>
+          <div class="col-lg-3 col-md-6 wow fadeIn">
+            <div class="fact-item bg-light rounded text-center h-100 p-5 " data-tilt data-tilt-reverse>
+              <i class="fa fa-users fa-4x mb-4"></i>
+              <p class="mb-2">Personal a cargo</p>
+              <h1 class="display-5 mb-0" data-toggle="counter-up">14</h1>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="
-            visibility: visible;
-            animation-delay: 0.5s;
-            animation-name: fadeInUp;
-          ">
-        <div class="team-item text-center rounded overflow-hidden">
-          <img class="img-fluid" src="/img/team-1.jpg" alt="" />
-          <div class="team-text">
-            <div class="team-title">
-              <h5>Full Name</h5>
-              <span>Designation</span>
+          <div class="col-lg-3 col-md-6 wow fadeIn">
+            <div class="fact-item bg-light rounded text-center h-100 p-5 " data-tilt data-tilt-reverse>
+              <i class="fa fa-bread-slice fa-4x mb-4"></i>
+              <p class="mb-2">Cantidad de recetas</p>
+              <h1 class="display-5 mb-0" data-toggle="counter-up">127</h1>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s" style="
-            visibility: visible;
-            animation-delay: 0.7s;
-            animation-name: fadeInUp;
-          ">
-        <div class="team-item text-center rounded overflow-hidden">
-          <img class="img-fluid" src="/img/team-1.jpg" alt="" />
-          <div class="team-text">
-            <div class="team-title">
-              <h5>Full Name</h5>
-              <span>Designation</span>
+          <div class="col-lg-3 col-md-6 wow fadeIn">
+            <div class="fact-item bg-light rounded text-center h-100 p-5" data-tilt data-tilt-reverse>
+              <i class="fa fa-cart-plus fa-4x mb-4"></i>
+              <p class="mb-2">Pedidos semanales</p>
+              <h1 class="display-5 mb-0" data-toggle="counter-up">+10.000</h1>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+
+  </section>
+
+
+  <div class="contenedorParrafo3"><a href="#seccionCardEmpleado">
+      <h1 class="parrafoRecom">Nuestro equipo y sus habilidades</h1>
+    </a></div>
+
+  <section id="seccionCardEmpleado">
+    <div class="container">
+      <div class="row g-4" id="rowTeam">
+        <div class="col-lg-3 col-md-6 wow fadeInUp">
+          <div class="team-item text-center rounded overflow-hidden">
+            <img class="img-fluid" src="/img/team-1.jpg" alt="" />
+            <div class="team-text">
+              <div class="team-title">
+                <h5>Full Name</h5>
+                <span>Designation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp">
+          <div class="team-item text-center rounded overflow-hidden">
+            <img class="img-fluid" src="/img/team-1.jpg" alt="" />
+            <div class="team-text">
+              <div class="team-title">
+                <h5>Full Name</h5>
+                <span>Designation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp">
+          <div class="team-item text-center rounded overflow-hidden">
+            <img class="img-fluid" src="/img/team-1.jpg" alt="" />
+            <div class="team-text">
+              <div class="team-title">
+                <h5>Full Name</h5>
+                <span>Designation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp">
+          <div class="team-item text-center rounded overflow-hidden">
+            <img class="img-fluid" src="/img/team-1.jpg" alt="" />
+            <div class="team-text">
+              <div class="team-title">
+                <h5>Full Name</h5>
+                <span>Designation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
 
   <div class="container-footer">
     <footer class="footer py-3 my-4">
@@ -254,6 +299,7 @@
     </footer>
   </div>
 
+  <script src="/js/vanilla-tilt.js"></script>
 </body>
 
 </html>

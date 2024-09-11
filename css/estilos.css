@@ -143,8 +143,8 @@ body {
 }
 
 .container-xxl {
-  margin-top: 100px;
-  padding: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .team-title {
@@ -342,4 +342,56 @@ form #form-busqueda {
 .labelTxt {
   margin: 0;
   color: #a63348;
+}
+
+#card {
+  width: 18rem;
+  border: none;
+}
+
+.card-img-top {
+  height: 260px;
+  object-fit: cover;
+}
+
+#card:hover,
+.fact-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#containerCardProdRecom {
+  padding-top: 1rem;
+}
+
+#rowCard,
+.contenedorParrafo2 {
+  padding-top: 2rem;
+}
+
+.parrafoRecom {
+  background-color: #a63348;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+.contenedorParrafo a,
+.contenedorParrafo2 a,
+.contenedorParrafo3 a {
+  text-decoration: none;
+}
+
+.contenedorParrafo a h1:hover,
+.contenedorParrafo2 a h1:hover,
+.contenedorParrafo3 a h1:hover {
+  color: #732036;
+}
+
+#seccionCardProducto,
+#seccionCardSobreNos,
+#seccionCardEmpleado {
+  scroll-margin-top: 100px;
+}
+
+.team-item {
+  padding-top: 3rem;
 }
