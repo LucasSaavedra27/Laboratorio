@@ -1,0 +1,39 @@
+.bg{
+    background-image: url(/img/crear_cuenta_bg.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body{
+
+    background-color: #a63348;
+    background: linear-gradient(to right, #a63348, #da2244);
+    
+    /* Prueba 1 */
+    /* background-color: #ffe259;
+    background: linear-gradient(to right, #ffa751, #ffe259); */
+    
+    /* Prueba 2 */
+    /* background-color: #8D493A;
+    background: linear-gradient(to right, #D0B8A8, #8D493A); */
+
+    /* Prueba 3 */
+    /* background-color: #8D493A;
+    background: linear-gradient(to right, #8D493A, #D0B8A8); */
+
+    /* Prueba 4 */
+    /* background-color: #721817;
+    background: linear-gradient(to right, #721817, #fa9f42); */
+
+    /* Prueba 5 */
+    /* background-color: #721817;
+    background: linear-gradient(to right, #fa9f42, #721817); */
+}
+.shadow-div {
+    transition: box-shadow 0.3s ease; /* Añade una transición suave */
+  }
+
+  .shadow-div:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Aplica la sombra en hover */
+}
